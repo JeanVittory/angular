@@ -1,0 +1,52 @@
+<mat-toolbar>
+  <button
+    mat-icon-button
+    class="mat-toolbar__icons"
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+    <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+  </button>
+  <span>MY APP</span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav
+    #sidenav="matSidenav"
+    mode="side"
+    opened
+    class="mat-elevation-z8"
+  >
+    <img
+      class="avatar mat-elevation-z8"
+      src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80"
+      alt="avatar"
+    />
+    <h4 class="mat-side-nav__name">Jean Carlo Vittory</h4>
+    <p class="mat-side-nav__designation">Fullstack developer</p>
+    <mat-divider></mat-divider>
+    <div class="mat-sidenav__buttons-container">
+      <button mat-button class="mat-sidenav__button">
+        <mat-icon class="mat-sidenav__logout-icon">person</mat-icon>
+        <span class="mat-sidenav__text-icon">Create</span>
+      </button>
+      <button mat-button class="mat-sidenav__button">
+        <mat-icon class="mat-sidenav__logout-icon">person</mat-icon>
+        <span class="mat-sidenav__text-icon">Peson</span>
+      </button>
+      <button mat-button class="mat-sidenav__button">
+        <mat-icon class="mat-sidenav__logout-icon">person</mat-icon>
+        <span class="mat-sidenav__text-icon">Favorites</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-button class="mat-sidenav__button">
+        <mat-icon class="mat-sidenav__logout-icon">logout</mat-icon>
+        <span class="mat-sidenav__text-icon">Logout</span>
+      </button>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">MAIN CONTENT</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
